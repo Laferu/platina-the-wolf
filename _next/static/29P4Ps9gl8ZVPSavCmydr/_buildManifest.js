@@ -1,0 +1,1 @@
+self.__BUILD_MANIFEST = (function(a){return {"/":[a],"/index":[a],"/platina-the-wolf-and-the-heir-of-light":[a]}}("static\u002Fchunks\u002F03ebb25c357ca145c678866f6fbc4d79e9c53d44.62001572ea510ccd3a8d.js"));self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()

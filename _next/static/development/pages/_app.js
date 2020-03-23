@@ -17143,6 +17143,8 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
 
+var isProd = ("development" || false) === 'production';
+var assetPrefix = isProd ? '/Platina-the-Wolf' : '';
 var GlobalContext = Object(react__WEBPACK_IMPORTED_MODULE_1__["createContext"])();
 var GlobalProvider = function GlobalProvider(_ref) {
   var children = _ref.children;
@@ -17175,13 +17177,14 @@ var GlobalProvider = function GlobalProvider(_ref) {
         setSidebarToggle: setSidebarToggle
       },
       url: {
+        assetPrefix: assetPrefix,
         platina1Url: 'https://laferu.github.io/Platina-the-Wolf-and-the-Heir-of-Light'
       }
     },
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 23,
       columnNumber: 5
     }
   }, __jsx(_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_3__["ThemeProvider"], {
@@ -17189,7 +17192,7 @@ var GlobalProvider = function GlobalProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 33,
       columnNumber: 7
     }
   }, __jsx(styled_components__WEBPACK_IMPORTED_MODULE_2__["ThemeProvider"], {
@@ -17198,7 +17201,7 @@ var GlobalProvider = function GlobalProvider(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 34,
       columnNumber: 9
     }
   }, children)));
