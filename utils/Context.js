@@ -27,6 +27,7 @@ export const GlobalProvider = ({ children }) => {
         setSidebarToggle
       },
       url: {
+        baseUrl: 'http://localhost:3000',
         platina1Url: 'https://laferu.github.io/Platina-the-Wolf-and-the-Heir-of-Light'
       }
     }}>

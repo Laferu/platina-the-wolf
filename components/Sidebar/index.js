@@ -1,6 +1,7 @@
-import React, { useState, Fragment, useContext } from 'react'
+import React, { useState, Fragment, useContext, useMemo } from 'react'
 import { useTheme } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
+import Link from 'next/link'
 // import { Collapse } from '@material-ui/core'
 
 import Divider from '@material-ui/core/Divider'
@@ -33,12 +34,15 @@ import {
   useStyles,
   StyledDrawer
 } from './styles'
+import ListItemLink from '../ListItemLink'
 
 const Sidebar = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
   const theme = useTheme()
   // const [open, setOpen] = useState([])
+
+  // const CustomLink = props => <Link to={to} {...props} />
 
   return (
     <Fragment>
@@ -60,22 +64,16 @@ const Sidebar = () => {
         </div>
         <Divider />
         <List>
-          <ListItem
-            button
-            component='a'
+          <ListItemLink
             href='/'
-          >
-            <ListItemIcon><HomeOutlined /></ListItemIcon>
-            <ListItemText primary='Início' />
-          </ListItem>
-          <ListItem
-            button
-            component='a'
+            icon={<HomeOutlined />}
+            primary='Início'
+          />
+          <ListItemLink
             href='/games'
-          >
-            <ListItemIcon><SportsEsportsOutlined /></ListItemIcon>
-            <ListItemText primary='Games' />
-          </ListItem>
+            icon={<SportsEsportsOutlined />}
+            primary='Games'
+          />
           <ListItem button>
             <ListItemIcon><ImportContactsOutlined /></ListItemIcon>
             <ListItemText primary='Histórias' />

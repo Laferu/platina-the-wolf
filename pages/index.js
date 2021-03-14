@@ -54,7 +54,7 @@ const Home = () => {
                 Platina the Wolf é um game de RPG em desenvolvimento, onde fantasia, ficção científica e super poderes atuam em um mesmo universo.
               </Typography>
               <Typography paragraph>
-                <Link href='/platina-the-wolf-and-the-heir-of-light'>
+                <Link href='/games/platina-the-wolf-and-the-heir-of-light'>
                   <a>Clique aqui para testar!</a>
                 </Link>
               </Typography>

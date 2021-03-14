@@ -33,10 +33,11 @@ import {
 //   }
 // }))
 
-const Games = () => {
+const GameOne = () => {
   const router = useRouter()
   const { slug } = router.query
-  // const context = useContext(GlobalContext)
+  console.log(Array(slug)[0])
+  const { url } = useContext(GlobalContext)
   // const classes = useStyles()
   return (
     <Fragment>
@@ -49,7 +50,7 @@ const Games = () => {
         <StyledScroll>
           <StyledMainIframe>
             <StyledIframe
-              src={`/${slug[0]}/index.html`}
+              src={`${router.basePath}/${Array(slug)[0]}/index.html`}
             />
           </StyledMainIframe>
         </StyledScroll>
@@ -58,4 +59,4 @@ const Games = () => {
   )
 }
 
-export default Games
+export default GameOne

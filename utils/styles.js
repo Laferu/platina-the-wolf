@@ -14,6 +14,13 @@ export default createGlobalStyle`
     display: none;
   } */
 
+  a {
+    &:link, &:visited {
+      color: inherit;
+      text-decoration: inherit;
+    }
+  }
+
   .button-group {
     display: flex;
     column-gap: 20px;

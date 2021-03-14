@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect, Fragment } from 'react'
+import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -14,6 +15,7 @@ import {
 } from './styles'
 
 const Topbar = () => {
+  const router = useRouter()
   const context = useContext(GlobalContext)
   const classes = useStyles()
 
@@ -44,7 +46,7 @@ const Topbar = () => {
             <MenuIcon />
           </IconButton>
           <StyledToolbarContainer>
-            <img src='/images/wolf.png' />
+            <img src={`${router.basePath}/images/wolf.png`} />
             <Typography variant="h4" noWrap>
               Platina the Wolf
             </Typography>
