@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import { Typography, Paper } from '@material-ui/core'
+import { Typography, Paper, Button } from '@material-ui/core'
 import Topbar from '../components/Topbar'
 import Sidebar from '../components/Sidebar'
 import { makeStyles } from '@material-ui/core/styles'
@@ -54,8 +54,14 @@ const Home = () => {
                 Platina the Wolf é um game de RPG em desenvolvimento, onde fantasia, ficção científica e super poderes atuam em um mesmo universo.
               </Typography>
               <Typography paragraph>
-                <Link href='/games/platina-the-wolf-and-the-heir-of-light'>
-                  <a>Clique aqui para testar!</a>
+                <Link href='/games/platina-the-wolf-and-the-heir-of-the-light'>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    component='a'
+                  >
+                    Clique aqui para testar!
+                  </Button>
                 </Link>
               </Typography>
             </StyledPaperText>

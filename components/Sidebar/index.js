@@ -1,7 +1,13 @@
-import React, { useState, Fragment, useContext, useMemo } from 'react'
+import React, {
+  useState,
+  Fragment,
+  useContext,
+  useMemo,
+  useCallback
+} from 'react'
 import { useTheme } from '@material-ui/core/styles'
 import List from '@material-ui/core/List'
-import Link from 'next/link'
+// import Link from 'next/link'
 // import { Collapse } from '@material-ui/core'
 
 import Divider from '@material-ui/core/Divider'
@@ -11,7 +17,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
-import InboxIcon from '@material-ui/icons/MoveToInbox'
+// import InboxIcon from '@material-ui/icons/MoveToInbox'
 // import MailIcon from '@material-ui/icons/Mail'
 // import ExpandLess from '@material-ui/icons/ExpandLess'
 // import ExpandMore from '@material-ui/icons/ExpandMore'
@@ -44,6 +50,14 @@ const Sidebar = () => {
 
   // const CustomLink = props => <Link to={to} {...props} />
 
+  const onMouseOver = useCallback(() => {
+    context.state.setSidebarToggle(true)
+  }, [])
+
+  const onMouseOut = useCallback(() => {
+    context.state.setSidebarToggle(false)
+  }, [])
+
   return (
     <Fragment>
       <StyledDrawer
@@ -54,8 +68,8 @@ const Sidebar = () => {
         classes={{
           paper: context.state.sidebarToggle ? classes.drawerOpen : classes.drawerClose
         }}
-        onMouseOver={() => context.state.setSidebarToggle(true)}
-        onMouseOut={() => context.state.setSidebarToggle(false)}
+        onMouseOver={onMouseOver}
+        onMouseOut={onMouseOut}
       >
         <div className={classes.toolbar}>
           <IconButton onClick={() => context.state.setSidebarToggle(false)}>

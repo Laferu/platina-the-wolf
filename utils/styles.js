@@ -26,8 +26,11 @@ export default createGlobalStyle`
     column-gap: 20px;
 
     a {
+      display: block;
+      height: 100%;
+
       &:link, &:visited {
-        color: inherit;
+        color: #fff;
         text-decoration: inherit;
       }
     }
@@ -67,7 +70,7 @@ export const StyledSpacing = styled.div`
 
 export const StyledMainIframe  = styled(StyledMain)`
   && {
-    padding: 0;
+    padding: 0 !important;
   }
 `
 

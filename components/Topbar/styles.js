@@ -20,13 +20,16 @@ export const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('lg')]: {
       marginLeft: 0
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('lg')]: {
       width: '100%'
     }
   },
   menuButton: {
     [theme.breakpoints.up('sm')]: {
       display: 'none'
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'flex'
     }
   },
   hide: {

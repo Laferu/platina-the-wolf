@@ -43,9 +43,15 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Games = () => {
-
   const context = useContext(GlobalContext)
   const classes = useStyles()
+
+  const LinkBehavior = React.forwardRef((props, ref) => (
+    <Link ref={ref} href={props.href} {...props}>
+      {props.children}
+    </Link>
+  ))
+
   return (
     <Fragment>
       <Head>
@@ -77,17 +83,33 @@ const Games = () => {
               />
               <StyledSpacing />
               <div className='button-group'>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  href='https://mega.nz/file/zl1yTSYT#9mDv9yNkHL_0S2CMF4LJiLpTgW00NjePwt6T7oeiUP8'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   Windows
                 </Button>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  href='https://mega.nz/file/ewNRRSiD#Ce6hIyMPmk0N-h_INsqFQnulVrBhCQU-6u1n77keRtg'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
                   Linux
                 </Button>
-                <Button variant="contained" color="secondary">
-                  <Link href='/games/platina-the-wolf-the-heir-of-the-light'>
-                    <a>Web</a>
-                  </Link>
-                </Button>
+                <Link href='/games/platina-the-wolf-and-the-heir-of-the-light'>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    component='a'
+                  >
+                    Web
+                  </Button>
+                </Link>
               </div>
             </StyledPaperText>
           </StyledMain>

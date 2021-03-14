@@ -7,8 +7,8 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 // import Sidebar from '../../components/Sidebar'
 // import { Avatar, Button, Chip, Icon, Typography } from '@material-ui/core'
 // import { NearMe } from '@material-ui/icons'
-import { makeStyles } from '@material-ui/core/styles'
-import { GlobalContext } from '../../utils/Context'
+// import { makeStyles } from '@material-ui/core/styles'
+// import { GlobalContext } from '../../utils/Context'
 
 import {
   // StyledSpacing,
@@ -37,7 +37,7 @@ const GameOne = () => {
   const router = useRouter()
   const { slug } = router.query
   console.log(Array(slug)[0])
-  const { url } = useContext(GlobalContext)
+  // const { url } = useContext(GlobalContext)
   // const classes = useStyles()
   return (
     <Fragment>

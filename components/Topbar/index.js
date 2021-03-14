@@ -40,7 +40,9 @@ const Topbar = () => {
             onClick={() => context.state.setSidebarToggle(true)}
             edge="start"
             className={
-              context.state.sidebarToggle ? classes.hide : classes.menuButton
+              context.state.sidebarToggle
+                ? classes.hide
+                : classes.menuButton
             }
           >
             <MenuIcon />
