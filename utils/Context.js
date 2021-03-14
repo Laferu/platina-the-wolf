@@ -11,6 +11,9 @@ export const GlobalProvider = ({ children }) => {
     palette: {
       primary: {
         main: '#222'
+      },
+      secondary: {
+        main: 'rgba(114,110,193,1)'
       }
     }
   })

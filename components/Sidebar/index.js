@@ -60,11 +60,19 @@ const Sidebar = () => {
         </div>
         <Divider />
         <List>
-          <ListItem button>
+          <ListItem
+            button
+            component='a'
+            href='/'
+          >
             <ListItemIcon><HomeOutlined /></ListItemIcon>
             <ListItemText primary='Início' />
           </ListItem>
-          <ListItem button>
+          <ListItem
+            button
+            component='a'
+            href='/games'
+          >
             <ListItemIcon><SportsEsportsOutlined /></ListItemIcon>
             <ListItemText primary='Games' />
           </ListItem>
