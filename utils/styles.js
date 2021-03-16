@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { Box, Paper } from '@material-ui/core'
+import PerfectScrollbar, { ScrollBarProps } from 'react-perfect-scrollbar'
 
 export default createGlobalStyle`
   /* #GameCanvas {
@@ -13,6 +14,34 @@ export default createGlobalStyle`
   #GameVideo {
     display: none;
   } */
+
+  html {
+    min-height: 100vh;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  #__next {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
+  }
+
+  main {
+    display: flex;
+    flex: 1 0 auto;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  ul {
+    margin: 0;
+  }
 
   a {
     &:link, &:visited {
@@ -37,23 +66,35 @@ export default createGlobalStyle`
   }
 `
 
-export const StyledScroll = styled.div`
+export const Wrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+`
+
+export const StyledScroll = styled(Box).attrs({
+  component: 'div'
+})`
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
   width: calc(100% - ${props => props.theme.drawerWidth}px);
+  height: 100vh;
   background: rgb(66,43,122);
   background: linear-gradient(270deg, rgba(114,110,193,1) 0%, rgba(220,219,241,1) 100%);
 `
 
-export const StyledMain = styled(Box).attrs({
+export const StyledMain = styled(PerfectScrollbar).attrs({
   component: 'main'
 })`
-  &&{
-  display: flex;
-  flex: 1;
-  padding: ${props => props.theme.spacing(3)}px;
-  flex-direction: column;
+  && {
+    display: flex;
+    flex: 1;
+    padding: ${props => props.theme.spacing(3)}px;
+    flex-direction: column;
   }
 `
 

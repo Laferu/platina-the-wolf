@@ -1,14 +1,28 @@
-import React, { Fragment, useContext } from 'react'
+import React, {
+  Fragment,
+  useContext,
+  useState,
+  useCallback
+} from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Topbar from '../../components/Topbar'
 import Sidebar from '../../components/Sidebar'
-import { Avatar, Button, Chip, Icon, Typography } from '@material-ui/core'
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Avatar,
+  Button,
+  Chip,
+  Icon,
+  Typography
+} from '@material-ui/core'
 import { NearMe } from '@material-ui/icons'
 import { makeStyles } from '@material-ui/core/styles'
 import { GlobalContext } from '../../utils/Context'
-import useScript from '../../utils/useScript';
+// import useScript from '../../utils/useScript';
 
 // const Demo = props => {
 //   importScript("/path/to/resource.js");
@@ -27,6 +41,7 @@ import {
   StyledPaperText,
   StyledIframe
 } from '../../utils/styles'
+import AccourdionComponent from '../../components/AccordionComponent'
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -45,12 +60,11 @@ const useStyles = makeStyles(theme => ({
 const Games = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
+  const [expanded, setExpanded] = useState('panel1')
 
-  const LinkBehavior = React.forwardRef((props, ref) => (
-    <Link ref={ref} href={props.href} {...props}>
-      {props.children}
-    </Link>
-  ))
+  const handleChange = useCallback((panel) => {
+    setExpanded(panel)
+  }, [])
 
   return (
     <Fragment>
@@ -65,15 +79,11 @@ const Games = () => {
         <StyledScroll>
           <div className={classes.toolbar} />
           <StyledMain>
-            {/* <StyledIframe src='/platinaGameOneComponents/index.html' /> */}
             <StyledPaperText>
-                <h2>Platina the Wolf - The Heir of the Light</h2>
-                {/* <h3>The Heir of the Light</h3> */}
-                
+              <h2>Platina the Wolf - The Heir of the Light</h2>
               <Typography paragraph>
                 Aliada à dois humanos, Platina parte para uma jornada em busca de poder para retomar o trono que é seu por direito.<br />
                 Guie sua aventura pelos quatro cantos de Gaia e vivencie grandes batalhas, aventuras e emoções.
-                {/* <br /> */}
                 
               </Typography>
               <Chip
@@ -82,6 +92,28 @@ const Games = () => {
                 color="secondary"
               />
               <StyledSpacing />
+              <div>
+                <h3>Changelog</h3>
+                <AccourdionComponent
+                  summary='0.8.0'
+                  list={['Mudança de equipamento ao utilizar uma máscara']}
+                  expanded={expanded === 'panel1'}
+                  onChange={() => handleChange('panel1')}
+                  ariaControls='panel1d-content'
+                  id='panel1d-header'
+                />
+                <AccourdionComponent
+                  summary='0.7.0'
+                  list={['Remoção de alguns diálogos']}
+                  expanded={expanded === 'panel2'}
+                  onChange={() => handleChange('panel2')}
+                  ariaControls='panel2d-content'
+                  id='panel2d-header'
+                />
+              </div>
+              
+              <StyledSpacing />
+              <h3>Download</h3>
               <div className='button-group'>
                 <Button
                   variant="contained"
@@ -110,6 +142,14 @@ const Games = () => {
                     Web
                   </Button>
                 </Link>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  component='a'
+                  disabled
+                >
+                  Android
+                </Button>
               </div>
             </StyledPaperText>
           </StyledMain>

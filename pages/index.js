@@ -11,7 +11,8 @@ import {
   StyledSpacing,
   StyledScroll,
   StyledMain,
-  StyledPaperText
+  StyledPaperText,
+  Wrapper
 } from '../utils/styles'
 import CarouselComponent from '../components/Carousel'
 
@@ -46,27 +47,29 @@ const Home = () => {
         <StyledScroll>
           <div className={classes.toolbar} />
           <StyledMain>
-            <StyledPaperText>
-              <Typography paragraph>
-                Aliada à dois humanos, Platina parte para uma jornada em busca de poder para retomar o trono que é seu por direito. Guie sua aventura pelos quatro cantos de Gaia e vivencie grandes batalhas, aventuras e emoções.
-              </Typography>
-              <Typography paragraph>
-                Platina the Wolf é um game de RPG em desenvolvimento, onde fantasia, ficção científica e super poderes atuam em um mesmo universo.
-              </Typography>
-              <Typography paragraph>
-                <Link href='/games/platina-the-wolf-and-the-heir-of-the-light'>
-                  <Button
-                    variant="contained"
-                    color="secondary"
-                    component='a'
-                  >
-                    Clique aqui para testar!
-                  </Button>
-                </Link>
-              </Typography>
-            </StyledPaperText>
-            <StyledSpacing />
-            <CarouselComponent />
+            <div>
+              <StyledPaperText>
+                <Typography paragraph>
+                  Aliada à dois humanos, Platina parte para uma jornada em busca de poder para retomar o trono que é seu por direito. Guie sua aventura pelos quatro cantos de Gaia e vivencie grandes batalhas, aventuras e emoções.
+                </Typography>
+                <Typography paragraph>
+                  Platina the Wolf é um game de RPG em desenvolvimento, onde fantasia, ficção científica e super poderes atuam em um mesmo universo.
+                </Typography>
+                <Typography paragraph>
+                  <Link href='/games/platina-the-wolf-and-the-heir-of-the-light'>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      component='a'
+                    >
+                      Clique aqui para testar!
+                    </Button>
+                  </Link>
+                </Typography>
+              </StyledPaperText>
+              <StyledSpacing />
+              <CarouselComponent />
+            </div>
           </StyledMain>
         </StyledScroll>
         {/* <main className={classes.content}>
