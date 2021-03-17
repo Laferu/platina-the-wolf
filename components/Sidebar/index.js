@@ -32,7 +32,8 @@ import {
   TrendingUpOutlined,
   FlareOutlined,
   ContactMailOutlined,
-  MonetizationOnOutlined
+  MonetizationOnOutlined,
+  Mood
 } from '@material-ui/icons'
 
 import { GlobalContext } from '../../utils/Context'
@@ -41,6 +42,7 @@ import {
   StyledDrawer
 } from './styles'
 import ListItemLink from '../ListItemLink'
+import { CustomScrollbar } from '../../utils/styles'
 
 const Sidebar = () => {
   const context = useContext(GlobalContext)
@@ -71,6 +73,7 @@ const Sidebar = () => {
         onMouseOver={onMouseOver}
         onMouseOut={onMouseOut}
       >
+        <CustomScrollbar>
         <div className={classes.toolbar}>
           <IconButton onClick={() => context.state.setSidebarToggle(false)}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
@@ -123,7 +126,7 @@ const Sidebar = () => {
             <ListItemText primary='Contato' />
           </ListItem>
           <ListItem button>
-            <ListItemIcon><MonetizationOnOutlined /></ListItemIcon>
+            <ListItemIcon><Mood /></ListItemIcon>
             <ListItemText primary='Apoie o Projeto' />
           </ListItem>
         </List>
@@ -144,7 +147,9 @@ const Sidebar = () => {
             </List>
           </Collapse>
         </List> */}
+        </CustomScrollbar>
       </StyledDrawer>
+      
     </Fragment>
   )
 }

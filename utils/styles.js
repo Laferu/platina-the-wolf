@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components'
 import { Box, Paper } from '@material-ui/core'
-import PerfectScrollbar, { ScrollBarProps } from 'react-perfect-scrollbar'
+import PerfectScrollbar from '../components/PerfectScrollbar'
 
 export default createGlobalStyle`
   /* #GameCanvas {
@@ -39,6 +39,10 @@ export default createGlobalStyle`
     flex-direction: column;
   }
 
+  h2 {
+    margin-top: 0;
+  }
+
   ul {
     margin: 0;
   }
@@ -65,6 +69,10 @@ export default createGlobalStyle`
     }
   }
 `
+
+export const CustomScrollbar = styled(PerfectScrollbar).attrs({
+  component: 'div'
+})``
 
 export const Wrapper = styled.div`
   display: flex;

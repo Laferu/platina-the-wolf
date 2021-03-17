@@ -7,6 +7,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 
 import GlobalStyles from '../utils/styles'
 
+if (typeof global.navigator === 'undefined') global.navigator = {}
+
 const MyApp = ({ Component, pageProps }) => {
   Router.events.on('routeChangeStart', () => NProgress.start())
   Router.events.on('routeChangeComplete', () => NProgress.done())
