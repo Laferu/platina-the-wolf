@@ -88,7 +88,7 @@ const Games = () => {
               </Typography>
               <Chip
                 icon={<NearMe />}
-                label="Versão: 0.8.0"
+                label="Versão: 0.10.0"
                 color="secondary"
               />
               <StyledSpacing />
@@ -144,7 +144,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/zl1yTSYT#9mDv9yNkHL_0S2CMF4LJiLpTgW00NjePwt6T7oeiUP8'
+                  href='https://mega.nz/file/K4d2TBjS#pBT6iUOCKBEGdsEHyl-zYnkIGOZjg674OBQuvl2OltY'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -153,7 +153,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/ewNRRSiD#Ce6hIyMPmk0N-h_INsqFQnulVrBhCQU-6u1n77keRtg'
+                  href='https://mega.nz/file/LlFm0DwR#vPshQfB0QDSanCARflqAc9tsP8pvKtxPqFdahOpGUIg'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
