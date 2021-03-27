@@ -95,6 +95,32 @@ const Games = () => {
               <div>
                 <h3>Changelog</h3>
                 <AccourdionComponent
+                  summary='0.10.0'
+                  list={[
+                    'Novo boss e máscara opcionais: Death',
+                    'Ajustes em sprites shadow e rage',
+                    'Ajustes nas categorias e elementos das habilidades',
+                    'Ajustes nas fraquezas de classes e fraquezas individuais',
+                    'Ajustes das habilidades das máscaras na forma rage e shadow',
+                    'Agora é possível alcançar alguns locais através da natação'
+                  ]}
+                  expanded={expanded === 'panel1'}
+                  onChange={() => handleChange('panel1')}
+                  ariaControls='panel1d-content'
+                  id='panel1d-header'
+                />
+                <AccourdionComponent
+                  summary='0.9.0'
+                  list={[
+                    'Novo boss e máscara opcionais: Pyromancer',
+                    'Missão paralela 1: Orochi'
+                  ]}
+                  expanded={expanded === 'panel1'}
+                  onChange={() => handleChange('panel1')}
+                  ariaControls='panel1d-content'
+                  id='panel1d-header'
+                />
+                <AccourdionComponent
                   summary='0.8.0'
                   list={['Mudança de equipamento ao utilizar uma máscara']}
                   expanded={expanded === 'panel1'}
