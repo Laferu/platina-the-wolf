@@ -88,12 +88,23 @@ const Games = () => {
               </Typography>
               <Chip
                 icon={<NearMe />}
-                label="Versão: 0.10.0"
+                label="Versão: 0.11.0"
                 color="secondary"
               />
               <StyledSpacing />
               <div>
                 <h3>Changelog</h3>
+                <AccourdionComponent
+                  summary='0.10.0'
+                  list={[
+                    'Continuação da história',
+                    'Nova transformação combinada: Fallen Angel',
+                  ]}
+                  expanded={expanded === 'panel1'}
+                  onChange={() => handleChange('panel1')}
+                  ariaControls='panel1d-content'
+                  id='panel1d-header'
+                />
                 <AccourdionComponent
                   summary='0.10.0'
                   list={[
@@ -104,10 +115,10 @@ const Games = () => {
                     'Ajustes das habilidades das máscaras na forma rage e shadow',
                     'Agora é possível alcançar alguns locais através da natação'
                   ]}
-                  expanded={expanded === 'panel1'}
-                  onChange={() => handleChange('panel1')}
-                  ariaControls='panel1d-content'
-                  id='panel1d-header'
+                  expanded={expanded === 'panel2'}
+                  onChange={() => handleChange('panel2')}
+                  ariaControls='panel2d-content'
+                  id='panel2d-header'
                 />
                 <AccourdionComponent
                   summary='0.9.0'
@@ -115,26 +126,26 @@ const Games = () => {
                     'Novo boss e máscara opcionais: Pyromancer',
                     'Missão paralela 1: Orochi'
                   ]}
-                  expanded={expanded === 'panel1'}
-                  onChange={() => handleChange('panel1')}
-                  ariaControls='panel1d-content'
-                  id='panel1d-header'
+                  expanded={expanded === 'panel3'}
+                  onChange={() => handleChange('panel3')}
+                  ariaControls='panel3d-content'
+                  id='panel3d-header'
                 />
                 <AccourdionComponent
                   summary='0.8.0'
                   list={['Mudança de equipamento ao utilizar uma máscara']}
-                  expanded={expanded === 'panel1'}
-                  onChange={() => handleChange('panel1')}
-                  ariaControls='panel1d-content'
-                  id='panel1d-header'
+                  expanded={expanded === 'panel4'}
+                  onChange={() => handleChange('panel4')}
+                  ariaControls='panel4d-content'
+                  id='panel4d-header'
                 />
                 <AccourdionComponent
                   summary='0.7.0'
                   list={['Remoção de alguns diálogos']}
-                  expanded={expanded === 'panel2'}
-                  onChange={() => handleChange('panel2')}
-                  ariaControls='panel2d-content'
-                  id='panel2d-header'
+                  expanded={expanded === 'panel5'}
+                  onChange={() => handleChange('panel5')}
+                  ariaControls='panel5d-content'
+                  id='panel5d-header'
                 />
               </div>
               
@@ -144,7 +155,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/K4d2TBjS#pBT6iUOCKBEGdsEHyl-zYnkIGOZjg674OBQuvl2OltY'
+                  href='https://mega.nz/file/WxUC3bqb#ROP1pO4eYzMc61ZilvalykxhbvFFQyss1joHoWIotso'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -153,7 +164,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/LlFm0DwR#vPshQfB0QDSanCARflqAc9tsP8pvKtxPqFdahOpGUIg'
+                  href='https://mega.nz/file/H9sxxYYL#_a0v03eMYmvexUo0O-lVfIy1MbVXUTLyXtk0ZFptM7I'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
