@@ -1,7 +1,7 @@
 {
-  "name": "",
+  "name": "platina-the-wolf-and-the-heir-of-the-light",
   "main": "index.html",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "js-flags": "--expose-gc",
   "window": {
       "title": "",
