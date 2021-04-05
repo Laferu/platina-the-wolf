@@ -39,7 +39,6 @@ import {
   StyledScroll,
   StyledMain,
   StyledPaperText,
-  StyledIframe
 } from '../../utils/styles'
 import AccourdionComponent from '../../components/AccordionComponent'
 
@@ -193,8 +192,9 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  component='a'
-                  disabled
+                  href='https://mega.nz/file/2g0VCQ4C#DB_lq56GhC2YeemdBQaa2VmH9USamfmGwFu5bJ6sKgk'
+                  target='_blank'
+                  rel='noopener noreferrer'
                 >
                   Android
                 </Button>
