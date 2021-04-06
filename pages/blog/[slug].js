@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Blog = ({ posts }) => {
+const Blog = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
 
@@ -63,7 +63,7 @@ const Blog = ({ posts }) => {
           <div className={classes.toolbar} />
           <StyledMain>
             <StyledPaperText>
-              {posts.map((e, index) => (
+              {/* {posts.map((e, index) => (
                 <Fragment key={index}>
                   <h2>{e.title}</h2>
                   <Typography paragraph>
@@ -71,7 +71,7 @@ const Blog = ({ posts }) => {
                   </Typography>
                 </Fragment>
 
-              ))}
+              ))} */}
               
             </StyledPaperText>
           </StyledMain>
@@ -93,13 +93,13 @@ export default Blog
 //   }
 // }
 
-export const getStaticProps = async () => {
-  const slug = context.params
-  const response = await fetch(`/data/blog.json`)
-  const posts = response.json()
-  return {
-    props: {
-      posts
-    }
-  }
-}
+// export const getStaticProps = async () => {
+//   const slug = context.params
+//   const response = await fetch(`/data/blog.json`)
+//   const posts = response.json()
+//   return {
+//     props: {
+//       posts
+//     }
+//   }
+// }

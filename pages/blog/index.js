@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-const Blog = ({ posts }) => {
+const Blog = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
 
@@ -69,7 +69,7 @@ const Blog = ({ posts }) => {
           <div className={classes.toolbar} />
           <StyledMain>
             <StyledPaperText>
-              {posts.map((e, index) => (
+              {/* {posts.map((e, index) => (
                 <Fragment key={index}>
                   <h2>{e.title}</h2>
                   <Typography paragraph>
@@ -77,7 +77,7 @@ const Blog = ({ posts }) => {
                   </Typography>
                 </Fragment>
 
-              ))}
+              ))} */}
               
             </StyledPaperText>
           </StyledMain>
@@ -89,13 +89,13 @@ const Blog = ({ posts }) => {
 
 export default Blog
 
-export const getStaticProps = async () => {
-  const response = await fetch(`http://localhost:3000/platina-the-wolf/data/blog.json?title=titulo1`)
-  const posts = await response.json()
-  return {
-    props: {
-      posts
-    },
-    // revalidate: 20000
-  }
-}
+// export const getStaticProps = async () => {
+//   const response = await fetch(`http://localhost:3000/platina-the-wolf/data/blog.json?title=titulo1`)
+//   const posts = await response.json()
+//   return {
+//     props: {
+//       posts
+//     },
+//     // revalidate: 20000
+//   }
+// }

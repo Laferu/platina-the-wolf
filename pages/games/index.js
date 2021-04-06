@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
 const Games = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
-  const [expanded, setExpanded] = useState('panel1')
+  const [expanded, setExpanded] = useState('panel1-0-1')
 
   const handleChange = useCallback((panel) => {
     setExpanded(panel)
@@ -87,12 +87,23 @@ const Games = () => {
               </Typography>
               <Chip
                 icon={<NearMe />}
-                label="Versão: 1.0.0"
+                label="Versão: 1.0.1"
                 color="secondary"
               />
               <StyledSpacing />
               <div>
                 <h3>Changelog</h3>
+                <AccourdionComponent
+                  summary='1.0.1'
+                  list={[
+                    'Correção de arquivos png que não estavam sendo carregados e impediam a progressão do game',
+                    'Problemas no Android, esta versão será desativada até ter uma solução'
+                  ]}
+                  expanded={expanded === 'panel1-0-1'}
+                  onChange={() => handleChange('panel1-0-1')}
+                  ariaControls='panel1-0-1d-content'
+                  id='panel1-0-1d-header'
+                />
                 <AccourdionComponent
                   summary='1.0.0'
                   list={[
@@ -165,7 +176,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/S1cDDaJQ#FuGq9weUZlk7q_7F4n9ErBM2MFpbU0oi3pCd3mTS8mw'
+                  href='https://mega.nz/file/qh1E3SyK#NBK0v6ESW5DLdOG-6QmRYQa0iqRPBJaa2HYVffFOQp8'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -174,7 +185,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/bx0X3SyL#MoxwvEPrpzIKykbvAkWBDrN2gKbpQKvEch92l0SveFI'
+                  href='https://mega.nz/file/G01FCABA#J8-oEyB_wY4zsV5Ig9BrueVZmRtEvFuiMbktV-du-Ag'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -192,9 +203,10 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/2g0VCQ4C#DB_lq56GhC2YeemdBQaa2VmH9USamfmGwFu5bJ6sKgk'
+                  // href='https://mega.nz/file/2g0VCQ4C#DB_lq56GhC2YeemdBQaa2VmH9USamfmGwFu5bJ6sKgk'
                   target='_blank'
                   rel='noopener noreferrer'
+                  disabled
                 >
                   Android
                 </Button>
