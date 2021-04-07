@@ -19,7 +19,8 @@ import {
   Icon,
   Typography
 } from '@material-ui/core'
-import { NearMe } from '@material-ui/icons'
+import { NearMe, ExpandMore } from '@material-ui/icons'
+// import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { makeStyles } from '@material-ui/core/styles'
 import { GlobalContext } from '../../utils/Context'
 // import useScript from '../../utils/useScript';
@@ -60,6 +61,7 @@ const Games = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
   const [expanded, setExpanded] = useState('panel1-0-2')
+  const [geralExpanded, setGeralExpanded] = useState(false)
 
   const handleChange = useCallback((panel) => {
     setExpanded(panel)
@@ -91,96 +93,113 @@ const Games = () => {
                 color="secondary"
               />
               <StyledSpacing />
-              <div>
-                <h3>Changelog</h3>
-                <AccourdionComponent
-                  summary='1.0.2'
-                  list={[
-                    'Versão para Android agora com os erros encontrados até o momento corrigidos',
-                    'Agora é possível pular a introdução com o toque na tela do celular'
-                  ]}
-                  expanded={expanded === 'panel1-0-2'}
-                  onChange={() => handleChange('panel1-0-2')}
-                  ariaControls='panel1-0-2d-content'
-                  id='panel1-0-2d-header'
-                />
-                <AccourdionComponent
-                  summary='1.0.1'
-                  list={[
-                    'Correção de arquivos png que não estavam sendo carregados e impediam a progressão do game',
-                    'Problemas no Android, esta versão será desativada até ter uma solução'
-                  ]}
-                  expanded={expanded === 'panel1-0-1'}
-                  onChange={() => handleChange('panel1-0-1')}
-                  ariaControls='panel1-0-1d-content'
-                  id='panel1-0-1d-header'
-                />
-                <AccourdionComponent
-                  summary='1.0.0'
-                  list={[
-                    'Final do game',
-                    'Nova arma - Lâmina sagrada'
-                  ]}
-                  expanded={expanded === 'panel1-0-0'}
-                  onChange={() => handleChange('panel1-0-0')}
-                  ariaControls='panel1-0-0d-content'
-                  id='panel1-0-0d-header'
-                />
-                <AccourdionComponent
-                  summary='0.11.0'
-                  list={[
-                    'Continuação da história',
-                    'Nova transformação combinada: Fallen Angel',
-                  ]}
-                  expanded={expanded === 'panel0-11-0'}
-                  onChange={() => handleChange('panel0-11-0')}
-                  ariaControls='panel0-11-0d-content'
-                  id='panel0-11-0d-header'
-                />
-                <AccourdionComponent
-                  summary='0.10.0'
-                  list={[
-                    'Novo boss e máscara opcionais: Death',
-                    'Ajustes em sprites shadow e rage',
-                    'Ajustes nas categorias e elementos das habilidades',
-                    'Ajustes nas fraquezas de classes e fraquezas individuais',
-                    'Ajustes das habilidades das máscaras na forma rage e shadow',
-                    'Agora é possível alcançar alguns locais através da natação'
-                  ]}
-                  expanded={expanded === 'pane0-10-0'}
-                  onChange={() => handleChange('pane0-10-0')}
-                  ariaControls='pane0-10-0d-content'
-                  id='pane0-10-0d-header'
-                />
-                <AccourdionComponent
-                  summary='0.9.0'
-                  list={[
-                    'Novo boss e máscara opcionais: Pyromancer',
-                    'Missão paralela 1: Orochi'
-                  ]}
-                  expanded={expanded === 'panel0-9-0'}
-                  onChange={() => handleChange('panel0-9-0')}
-                  ariaControls='panel0-9-0d-content'
-                  id='panel0-9-0d-header'
-                />
-                <AccourdionComponent
-                  summary='0.8.0'
-                  list={['Mudança de equipamento ao utilizar uma máscara']}
-                  expanded={expanded === 'panel0-8-0'}
-                  onChange={() => handleChange('panel0-8-0')}
-                  ariaControls='panel0-8-0d-content'
-                  id='panel0-8-0d-header'
-                />
-                <AccourdionComponent
-                  summary='0.7.0'
-                  list={['Remoção de alguns diálogos']}
-                  expanded={expanded === 'panel0-7-0'}
-                  onChange={() => handleChange('panel0-7-0')}
-                  ariaControls='panel0-7-0d-content'
-                  id='panel0-7-0d-header'
-                />
-              </div>
               
+              <Accordion
+                square
+                onChange={() => setGeralExpanded(e => !e)}
+                expanded={geralExpanded}
+              >
+                <AccordionSummary
+                  aria-controls='geral-content'
+                  id='geral-content-header'
+                  expandIcon={<ExpandMore />}
+                >
+                  <Typography>Changelog</Typography>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <div style={{ width: '100%' }}>
+                    <AccourdionComponent
+                      summary='1.0.2'
+                      list={[
+                        'Versão para Android agora com os erros encontrados até o momento corrigidos',
+                        'Agora é possível pular a introdução com o toque na tela do celular'
+                      ]}
+                      expanded={expanded === 'panel1-0-2'}
+                      onChange={() => handleChange('panel1-0-2')}
+                      ariaControls='panel1-0-2d-content'
+                      id='panel1-0-2d-header'
+                    />
+                    <AccourdionComponent
+                      summary='1.0.1'
+                      list={[
+                        'Correção de arquivos png que não estavam sendo carregados e impediam a progressão do game',
+                        'Problemas no Android, esta versão será desativada até ter uma solução'
+                      ]}
+                      expanded={expanded === 'panel1-0-1'}
+                      onChange={() => handleChange('panel1-0-1')}
+                      ariaControls='panel1-0-1d-content'
+                      id='panel1-0-1d-header'
+                    />
+                    <AccourdionComponent
+                      summary='1.0.0'
+                      list={[
+                        'Final do game',
+                        'Nova arma - Lâmina sagrada'
+                      ]}
+                      expanded={expanded === 'panel1-0-0'}
+                      onChange={() => handleChange('panel1-0-0')}
+                      ariaControls='panel1-0-0d-content'
+                      id='panel1-0-0d-header'
+                    />
+                    <AccourdionComponent
+                      summary='0.11.0'
+                      list={[
+                        'Continuação da história',
+                        'Nova transformação combinada: Fallen Angel',
+                      ]}
+                      expanded={expanded === 'panel0-11-0'}
+                      onChange={() => handleChange('panel0-11-0')}
+                      ariaControls='panel0-11-0d-content'
+                      id='panel0-11-0d-header'
+                    />
+                    <AccourdionComponent
+                      summary='0.10.0'
+                      list={[
+                        'Novo boss e máscara opcionais: Death',
+                        'Ajustes em sprites shadow e rage',
+                        'Ajustes nas categorias e elementos das habilidades',
+                        'Ajustes nas fraquezas de classes e fraquezas individuais',
+                        'Ajustes das habilidades das máscaras na forma rage e shadow',
+                        'Agora é possível alcançar alguns locais através da natação'
+                      ]}
+                      expanded={expanded === 'pane0-10-0'}
+                      onChange={() => handleChange('pane0-10-0')}
+                      ariaControls='pane0-10-0d-content'
+                      id='pane0-10-0d-header'
+                    />
+                    <AccourdionComponent
+                      summary='0.9.0'
+                      list={[
+                        'Novo boss e máscara opcionais: Pyromancer',
+                        'Missão paralela 1: Orochi'
+                      ]}
+                      expanded={expanded === 'panel0-9-0'}
+                      onChange={() => handleChange('panel0-9-0')}
+                      ariaControls='panel0-9-0d-content'
+                      id='panel0-9-0d-header'
+                    />
+                    <AccourdionComponent
+                      summary='0.8.0'
+                      list={['Mudança de equipamento ao utilizar uma máscara']}
+                      expanded={expanded === 'panel0-8-0'}
+                      onChange={() => handleChange('panel0-8-0')}
+                      ariaControls='panel0-8-0d-content'
+                      id='panel0-8-0d-header'
+                    />
+                    <AccourdionComponent
+                      summary='0.7.0'
+                      list={['Remoção de alguns diálogos']}
+                      expanded={expanded === 'panel0-7-0'}
+                      onChange={() => handleChange('panel0-7-0')}
+                      ariaControls='panel0-7-0d-content'
+                      id='panel0-7-0d-header'
+                    />
+                  </div>
+                </AccordionDetails>
+              </Accordion>
+              
+              <StyledSpacing />
+              <h3>Para abrir o menu ou cancelar ação em dispositivos móveis, mantenha um dedo na tela e toca com outro dedo, coisa do RPG Maker :(.</h3>
               <StyledSpacing />
               <h3>Download</h3>
               <div className='button-group'>

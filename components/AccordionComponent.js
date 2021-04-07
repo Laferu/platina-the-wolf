@@ -4,6 +4,7 @@ import {
   AccordionSummary,
   Typography
 } from '@material-ui/core'
+import { ExpandMore } from '@material-ui/icons'
 
 const AccourdionComponent = ({
   summary,
@@ -14,8 +15,17 @@ const AccourdionComponent = ({
   id
 }) => {
   return (
-    <Accordion square expanded={expanded} onChange={() => onChange()}>
-      <AccordionSummary aria-controls={ariaControls} id={id}>
+    <Accordion
+      square
+      expanded={expanded}
+      onChange={() => onChange()}
+      // style={{ width: '100%' }}
+    >
+      <AccordionSummary
+        aria-controls={ariaControls}
+        id={id}
+        expandIcon={<ExpandMore />}
+      >
         <Typography>{summary}</Typography>
       </AccordionSummary>
       <AccordionDetails>
@@ -32,3 +42,12 @@ const AccourdionComponent = ({
 }
 
 export default AccourdionComponent
+
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { slug: 'platina-the-wolf-and-the-heir-of-the-light' } },
+    ],
+    fallback: false
+  }
+}

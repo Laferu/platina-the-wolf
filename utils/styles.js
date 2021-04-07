@@ -57,6 +57,12 @@ export default createGlobalStyle`
   .button-group {
     display: flex;
     column-gap: 20px;
+    row-gap: 20px;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
 
     a {
       display: block;
