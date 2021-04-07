@@ -36,7 +36,7 @@ import {
 const GameOne = () => {
   const router = useRouter()
   const { slug } = router.query
-  console.log(Array(slug)[0])
+  // console.log(Array(slug)[0])
   // const { url } = useContext(GlobalContext)
   // const classes = useStyles()
   return (
@@ -50,7 +50,7 @@ const GameOne = () => {
         <StyledScroll>
           <StyledMainIframe>
             <StyledIframe
-              src={`${router.basePath}/${Array(slug)[0]}/index.html`}
+              src={`${router.basePath}/${slug}/index.html`}
             />
           </StyledMainIframe>
         </StyledScroll>
@@ -60,3 +60,18 @@ const GameOne = () => {
 }
 
 export default GameOne
+
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      { params: { slug: 'platina-the-wolf-and-the-heir-of-the-light' } },
+    ],
+    fallback: false
+  }
+}
+
+export const getStaticProps = async () => {
+  return {
+    props: {}
+  }
+}

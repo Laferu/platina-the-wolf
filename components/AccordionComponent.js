@@ -42,12 +42,3 @@ const AccourdionComponent = ({
 }
 
 export default AccourdionComponent
-
-export const getStaticPaths = async () => {
-  return {
-    paths: [
-      { params: { slug: 'platina-the-wolf-and-the-heir-of-the-light' } },
-    ],
-    fallback: false
-  }
-}
