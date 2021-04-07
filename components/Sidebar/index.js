@@ -91,10 +91,13 @@ const Sidebar = () => {
             icon={<SportsEsportsOutlined />}
             primary='Games'
           />
-          <ListItem button>
-            <ListItemIcon><ImportContactsOutlined /></ListItemIcon>
-            <ListItemText primary='Histórias' />
-          </ListItem>
+          <ListItemLink
+            href='https://platinathewolf.wordpress.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+            icon={<ImportContactsOutlined />}
+            primary='Blog'
+          />
         </List>
         <Divider />
         <List>
