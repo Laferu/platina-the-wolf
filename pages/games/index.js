@@ -89,7 +89,7 @@ const Games = () => {
               </Typography>
               <Chip
                 icon={<NearMe />}
-                label="Versão: 1.0.2"
+                label="Versão: 1.0.3"
                 color="secondary"
               />
               <StyledSpacing />
@@ -108,6 +108,18 @@ const Games = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <div style={{ width: '100%' }}>
+                    <AccourdionComponent
+                      summary='1.0.3'
+                      list={[
+                        'Pré-loading na versão web',
+                        'Revisões em vantagens e fraquezas dos inimigos',
+                        'Cenários de batalha onde não tinha'
+                      ]}
+                      expanded={expanded === 'panel1-0-3'}
+                      onChange={() => handleChange('panel1-0-3')}
+                      ariaControls='panel1-0-3d-content'
+                      id='panel1-0-3d-header'
+                    />
                     <AccourdionComponent
                       summary='1.0.2'
                       list={[

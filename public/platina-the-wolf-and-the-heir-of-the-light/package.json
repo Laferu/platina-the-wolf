@@ -1,13 +1,1 @@
-{
-  "name": "platina-the-wolf-and-the-heir-of-the-light",
-  "main": "index.html",
-  "version": "1.0.1",
-  "js-flags": "--expose-gc",
-  "window": {
-      "title": "Platina the Wolf",
-      "toolbar": false,
-      "width": 816,
-      "height": 624,
-      "icon": "icon/icon.png"
-  }
-}
+{"name":"platina-the-wolf-and-the-heir-of-the-light","main":"index.html","version":"1.0.3","js-flags":"--expose-gc","window":{"position":"center","show":true,"toolbar":false,"icon":"www/icon/icon.png","width":816,"height":624,"min_width":408,"min_height":312,"max_width":null,"max_height":null,"title":"","resizable":true,"fullscreen":false,"frame":true,"always-on-top":false}}
