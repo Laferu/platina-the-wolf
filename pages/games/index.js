@@ -113,7 +113,8 @@ const Games = () => {
                       list={[
                         'Pré-loading na versão web',
                         'Revisões em vantagens e fraquezas dos inimigos',
-                        'Cenários de batalha onde não tinha'
+                        'Cenários de batalha onde não tinha',
+                        'Cristal também recebe buff quando Light transformado na mesma raça usa o Rage'
                       ]}
                       expanded={expanded === 'panel1-0-3'}
                       onChange={() => handleChange('panel1-0-3')}
