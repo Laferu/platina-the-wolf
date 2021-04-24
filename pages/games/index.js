@@ -60,7 +60,7 @@ const useStyles = makeStyles(theme => ({
 const Games = () => {
   const context = useContext(GlobalContext)
   const classes = useStyles()
-  const [expanded, setExpanded] = useState('panel1-0-2')
+  const [expanded, setExpanded] = useState('panel1-0-19')
   const [geralExpanded, setGeralExpanded] = useState(false)
 
   const handleChange = useCallback((panel) => {
@@ -89,7 +89,7 @@ const Games = () => {
               </Typography>
               <Chip
                 icon={<NearMe />}
-                label="Versão: 1.0.3"
+                label="Versão: 1.0.19"
                 color="secondary"
               />
               <StyledSpacing />
@@ -108,6 +108,16 @@ const Games = () => {
                 </AccordionSummary>
                 <AccordionDetails>
                   <div style={{ width: '100%' }}>
+                    <AccourdionComponent
+                      summary='1.0.19'
+                      list={[
+                        'Correções de diversos bugs',
+                      ]}
+                      expanded={expanded === 'panel1-0-19'}
+                      onChange={() => handleChange('panel1-0-19')}
+                      ariaControls='panel1-0-19d-content'
+                      id='panel1-0-19d-header'
+                    />
                     <AccourdionComponent
                       summary='1.0.3'
                       list={[
@@ -219,7 +229,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/y90SyATZ#i8zspngZvlAEG5jKouLCGUy5wabIn9xoi8xrTAhBTf8'
+                  href='https://mega.nz/file/ahsSWCRB#c9UpHeJZtYVfRc5VecMyAELZ_5YynL_VqeSIXj63bsw'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -228,7 +238,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/qoUXwCbb#JVOWw9JZqI2CC8G5x1suFMAwzbgXovGBL9qGYAfUyZU'
+                  href='https://mega.nz/file/3tE0lJhQ#fQTm6AFo2SzXdDvf3Q2Zy_EqsrKZH27muqS5TTBEe3s'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -246,7 +256,7 @@ const Games = () => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  href='https://mega.nz/file/LpVEkZra#g3DiKX6mp2LCRBZ7cSFCssLSNfuNbdCWCiqlxynlkn0'
+                  href='https://mega.nz/file/m59SnKhS#OfJYs54yHxE_4ouYEFv4xk9XKQoqLLFP-arbpICo1AQ'
                   target='_blank'
                   rel='noopener noreferrer'
                   // disabled
