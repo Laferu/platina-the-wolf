@@ -259,9 +259,17 @@ const Games = () => {
                   href='https://mega.nz/file/m59SnKhS#OfJYs54yHxE_4ouYEFv4xk9XKQoqLLFP-arbpICo1AQ'
                   target='_blank'
                   rel='noopener noreferrer'
-                  // disabled
                 >
                   Android
+                </Button>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  href='https://github.com/Laferu/Platina-the-Wolf-and-the-Heir-of-Light'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Github
                 </Button>
               </div>
             </StyledPaperText>

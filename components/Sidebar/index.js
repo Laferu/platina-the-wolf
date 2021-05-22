@@ -32,7 +32,6 @@ import {
   TrendingUpOutlined,
   FlareOutlined,
   ContactMailOutlined,
-  MonetizationOnOutlined,
   Mood
 } from '@material-ui/icons'
 
@@ -124,10 +123,13 @@ const Sidebar = () => {
         </List>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemIcon><ContactMailOutlined /></ListItemIcon>
-            <ListItemText primary='Contato' />
-          </ListItem>
+          <ListItemLink
+            href='mailto:rp.araujo2@gmail.com'
+            target='_blank'
+            rel='noopener noreferrer'
+            icon={<ContactMailOutlined />}
+            primary='Contato'
+          />
           <ListItem button>
             <ListItemIcon><Mood /></ListItemIcon>
             <ListItemText primary='Apoie o Projeto' />

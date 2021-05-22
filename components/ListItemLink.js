@@ -5,13 +5,19 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 
 function ListItemLink(props) {
-  const { icon, primary, href, rel = null, target = null } = props
+  const {
+    icon,
+    primary,
+    href,
+    rel = null,
+    target = null
+  } = props
 
   const CustomLink = useMemo(
     () =>
       forwardRef((linkProps, ref) => (
         <Link ref={ref} href={href} {...linkProps}>
-          <a rel={rel} target={target}>
+          <a rel={rel} target={target} title={primary}>
             <ListItem button>
               <ListItemIcon>{icon}</ListItemIcon>
               <ListItemText primary={primary} />
